@@ -1,0 +1,7 @@
+INSERT INTO users (id, name, email, password) VALUES (1, 'yonkers', 'yonkers@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u'),(2, 'yippers', 'yippers@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u'),(3, 'yoppers', 'yoppers@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u'); 
+
+INSERT INTO properties (id, owner_id, title, description, thumbnail_photo_url, cover_photo_url, cost_per_night, parking_spaces, number_of_bathrooms, number_of_bedrooms, country, street, city, province, post_code) VALUES (1, 1, 'castle', 'description', 'thumbnailURL1', 'coverphotoURL1',1,4,5,6,'Canada','street1','city1','Ontario','yui789'),(2, 2, 'shack', 'description', 'thumbnailURL2', 'coverphotoURL2', 2,5,6,7,'Canadeez','street2','city2','Ontariooz','yju752'),(3, 3, 'box', 'description', 'thumbnailURL3', 'coverphotoURL3', 3,6,7,8,'Canadum','street3','city3','Ontariy','qwe456'); 
+
+INSERT INTO reservations (id, start_date, end_date, property_id, guest_id) VALUES (1,'2018-02-12T08:00:00.000Z' ,'2018-02-13T08:00:00.000Z', 1, 1), (2,'2018-02-16T08:00:00.000Z' ,'2018-02-17T08:00:00.000Z', 2, 2), (3,'2018-02-14T08:00:00.000Z' ,'2018-02-15T08:00:00.000Z', 3, 3)  ;
+
+INSERT INTO property_reviews (id, guest_id, property_id, reservation_id, rating, message) VALUES (1, 1, 1, 1, 2, 'text'), (2, 2, 2, 2, 3, 'text'), (3, 3, 3, 3, 4, 'text') 
