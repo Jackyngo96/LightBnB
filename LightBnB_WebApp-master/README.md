@@ -45,4 +45,4 @@ A simple multi -page Airbnb clone that useres a server-side Javascript to displa
   * `database.js` is responsible for all queries to the database. It doesn't currently connect to any database, all it does is return data from `.json` files. 
 
   ## Project Entity Relationship Diagram 
-!["ERD"]
+!["ERD"]https://github.com/Jackyngo96/LightBnB/blob/main/docs/ERD.PNG?raw=true
