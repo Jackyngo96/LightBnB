@@ -7,11 +7,6 @@ const pool = new Pool({
   database: "lightbnb",
 });
 
-// pool.query(`SELECT title FROM properties LIMIT 10;`).then(response => {console.log(response)})
-
-// const properties = require('./json/properties.json');
-// const users = require('./json/users.json');
-
 /// Users
 
 /**
@@ -117,15 +112,15 @@ exports.getAllReservations = getAllReservations;
  * @return {Promise<[{}]>}  A promise to the properties.
  */
 const getAllProperties = (options, limit = 10) => {
-  // 1 Create Array to store query parameters
+
   const queryParams = [];
-  // 2 Begin query with SELECT, FROM, and JOIN statements
+
   let queryString = `
   SELECT properties.*, avg(property_reviews.rating) as average_rating
   FROM properties
   JOIN property_reviews ON properties.id = property_id
   `;
-  //3 Push query parameters into query array if city, owner_id, min & max price options are provided. Add appropriate statements to query string
+  
   if (options.city) {
     queryParams.push(`%${options.city}%`);
     queryString += `WHERE city LIKE $${queryParams.length} `;
@@ -156,7 +151,6 @@ const getAllProperties = (options, limit = 10) => {
     }
   }
 
-  //4 Add the rest of the query that follows the WHERE statement
   queryString += `GROUP BY properties.id `;
 
   if (options.minimum_rating) {
@@ -170,10 +164,8 @@ const getAllProperties = (options, limit = 10) => {
   LIMIT $${queryParams.length};
   `;
 
-  //5 Console log query
   console.log(queryString, queryParams);
 
-  //6 Run the query
   return pool.query(queryString, queryParams).then((res) => res.rows);
 };
 
